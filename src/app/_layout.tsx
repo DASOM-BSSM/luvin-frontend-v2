@@ -5,12 +5,14 @@ import { Stack } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
 import { useEffect } from 'react';
 
+import { ThemeProvider } from '@/src/providers/theme-provider';
+
 // 컴포넌트 밖(모듈 스코프)에서 호출해야 한다. 훅 안에서 부르면 이미 늦은 경우가 있다.
 SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
   // 키 이름이 곧 RN 의 fontFamily 값이다.
-  // ttf 의 PostScript 이름과 맞춘다.
+  // tailwind.config.js 의 fontFamily / src/constants/typography.ts 와 반드시 일치해야 한다.
   const [loaded, error] = useFonts({
     YdestreetB: require('@/assets/fonts/YdestreetB.ttf'),
     YdestreetL: require('@/assets/fonts/YdestreetL.ttf'),
@@ -27,5 +29,9 @@ export default function RootLayout() {
     return null;
   }
 
-  return <Stack />;
+  return (
+    <ThemeProvider>
+      <Stack />
+    </ThemeProvider>
+  );
 }
