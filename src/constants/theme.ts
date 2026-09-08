@@ -6,11 +6,11 @@
  *
  * 사용 예:
  *   import theme from '@/src/constants/theme';
- *   theme.colors.red[500]
+ *   theme.colors.pink[500]
  *   theme.typography.heading.h1
  */
 
-import { brown, colors, defaultColor, neutral, red, state, text, yellow } from './colors';
+import { brown, colors, defaultColor, pink, state, text, yellow } from './colors';
 import { body, fontFamily, heading, lineHeightRatio, typography } from './typography';
 
 const theme = {
@@ -20,8 +20,7 @@ const theme = {
   // 자주 쓰는 것들은 한 단계 줄여서 바로 꺼낼 수 있게 둔다.
   brown,
   yellow,
-  red,
-  neutral,
+  pink,
   state,
   text,
   default: defaultColor,

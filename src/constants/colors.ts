@@ -1,12 +1,11 @@
 /**
  * 색상 토큰.
  *
- * 기준은 Luvin-Frontend-v1 의 tailwind.config.js 이고, V2 에서 변경된 색상만
- * Figma "Luvin-Design" 의 `Color system` 값으로 교체했다.
- * tailwind.config.js 의 theme.extend.colors 와 같은 값을 미러링한다.
+ * 출처: Figma "Luvin-Design" 로컬 변수 컬렉션 `Color system`.
+ * tailwind.config.js 가 이 파일을 require 해서 쓴다. 값은 여기서만 고칠 것.
  */
 
-/** V1 그대로 (Figma `brown color/*` 와 동일) */
+/** Figma: `brown color/*` */
 export const brown = {
   100: '#F8F0EA',
   200: '#F4E8DF',
@@ -18,9 +17,9 @@ export const brown = {
   800: '#6D3C19',
   900: '#522D13',
   1000: '#40230F',
-} as const;
+};
 
-/** 변경 : Figma `yellow color/*` (V1 은 주황 계열이었음) */
+/** Figma: `yellow color/*` */
 export const yellow = {
   100: '#FFFDF5',
   200: '#FFFCF0',
@@ -32,10 +31,10 @@ export const yellow = {
   800: '#998E5F',
   900: '#736B47',
   1000: '#595337',
-} as const;
+};
 
-/** 신규 : Figma `pink color/*` (코드에서는 red 로 쓴다) */
-export const red = {
+/** Figma: `pink color/*` */
+export const pink = {
   100: '#FFF6F8',
   200: '#FFF2F5',
   300: '#FFE4EA',
@@ -46,54 +45,38 @@ export const red = {
   800: '#996570',
   900: '#734C54',
   1000: '#593B41',
-} as const;
+};
 
-/** V1 그대로 (Figma 에는 대응 변수가 없음) */
-export const neutral = {
-  100: '#FDFCF8',
-  200: '#FCFAF4',
-  300: '#F9F5E9',
-  400: '#ECDFB8',
-  500: '#D4C9A6',
-  600: '#BDB293',
-  700: '#B1A78A',
-  800: '#8E866E',
-  900: '#6A6453',
-  1000: '#534E40',
-} as const;
-
-/** V1 그대로 (Figma `state color/*` 와 동일) */
+/** Figma: `state color/*` */
 export const state = {
   error: '#FF0030',
   warning: '#FFBA00',
   success: '#00D55B',
-} as const;
+};
 
-/** V1 그대로 (Figma `text color/*` 와 동일) */
+/** Figma: `text color/*` */
 export const text = {
   primary: '#1D1D1D',
   secondary: '#334655',
   muted: '#647F8B',
-} as const;
+};
 
+/** Figma: `default color/*` (black 은 순수 #000 이 아니라 #1D1D1D) */
 export const defaultColor = {
   white: '#FFFFFF',
   black: '#1D1D1D',
-  /** 변경 : #FAF5E8 -> Figma `default color/bg` */
   bg: '#FFFEFA',
-  /** 신규 : Figma `default color/gray` */
   gray: '#D9D9D9',
-} as const;
+};
 
 export const colors = {
   brown,
   yellow,
-  red,
-  neutral,
+  pink,
   state,
   text,
   default: defaultColor,
-} as const;
+};
 
 export type Colors = typeof colors;
 export type ColorShade = keyof typeof brown;
