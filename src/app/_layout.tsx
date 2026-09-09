@@ -17,8 +17,8 @@ export default function RootLayout() {
   // 키 이름이 곧 RN 의 fontFamily 값이다.
   // tailwind.config.js 의 fontFamily / src/constants/typography.ts 와 반드시 일치해야 한다.
   const [loaded, error] = useFonts({
-    YdestreetB: require('@/assets/fonts/YdestreetB.ttf'),
-    YdestreetL: require('@/assets/fonts/YdestreetL.ttf'),
+    YdestreetB: require('@/src/assets/fonts/YdestreetB.ttf'),
+    YdestreetL: require('@/src/assets/fonts/YdestreetL.ttf'),
   });
 
   useEffect(() => {
